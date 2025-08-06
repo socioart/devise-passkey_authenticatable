@@ -1,8 +1,5 @@
 # Devise::PasskeyAuthenticatable
-Short description and motivation.
-
-## Usage
-How to use my plugin.
+Add Passkey support to Devise.
 
 ## Installation
 Add this line to your application's Gemfile:
