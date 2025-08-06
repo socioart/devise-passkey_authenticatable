@@ -6,7 +6,7 @@
 %button.btn.btn-primary.mb-4{type: "button", id: "register-passkey"}
   パスキーの登録
 
-= form_tag(user_passkeys_path, multipart: true, style: "display: none", id: "passkey_form") do |f|
+= form_tag(send("#{resource_name}_passkeys_path"), multipart: true, style: "display: none", id: "passkey_form") do |f|
   = hidden_field_tag :credential_json
 
 - @passkeys.each do |passkey|
@@ -24,5 +24,5 @@
             = passkey.last_used_at.strftime("%Y年%-m月%-d月 %H:%M:%S")
             = passkey.last_used_user_agent_text
             = "(#{passkey.last_used_ip})"
-      = link_to "名前の編集", edit_user_passkey_path(passkey), class: "btn btn-warning"
-      = link_to "削除", user_passkey_path(passkey), method: :delete, data: {confirm: "このパスキーを削除しますか？"}, class: "btn btn-danger"
+      = link_to "名前の編集", send("edit_#{resource_name}_passkey_path", passkey), class: "btn btn-warning"
+      = link_to "削除", send("#{resource_name}_passkey_path", passkey), method: :delete, data: {confirm: "このパスキーを削除しますか？"}, class: "btn btn-danger"

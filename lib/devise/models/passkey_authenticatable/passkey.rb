@@ -12,7 +12,7 @@ module Devise
 
           serialize :creation_response, coder: JSON
 
-          attr_readonly :user_id, :credential_id, :public_key, :creation_response
+          attr_readonly :credential_id, :public_key, :creation_response
 
           before_validation do
             self.name = name.to_s.strip.presence || entry_for_aaguid&.[]("name") || "Unknown provider"

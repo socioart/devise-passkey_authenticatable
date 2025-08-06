@@ -13,7 +13,7 @@ module Devise
       module ClassMethods
         def authenticate_by_passkey(request_response, passkey_challenge, request, now)
           webauthn_credential = WebAuthn::Credential.from_get(request_response)
-          stored_credential = User::Passkey.find_by(credential_id: webauthn_credential.id)
+          stored_credential = const_get(:Passkey).find_by(credential_id: webauthn_credential.id)
           return nil unless stored_credential
 
           begin
@@ -29,7 +29,7 @@ module Devise
               last_used_ip: request.remote_ip,
               last_used_user_agent: request.user_agent,
             )
-            stored_credential.user
+            stored_credential.send(self.name.underscore)
           rescue WebAuthn::Error => e
             Devise::PasskeyAuthenticatable.log_webauthn_error(e, request_response, passkey_challenge)
             nil

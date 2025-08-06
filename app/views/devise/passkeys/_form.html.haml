@@ -6,5 +6,5 @@
     = f.text_field :name, class: "form-control"
 
   .text-end
-    = link_to t("back"), user_passkeys_path, class: "btn btn-outline-secondary"
+    = link_to t("back"), send("#{resource_name}_passkeys_path"), class: "btn btn-outline-secondary"
     = f.submit class: "btn btn-primary"
