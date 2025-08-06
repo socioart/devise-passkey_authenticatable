@@ -51,5 +51,9 @@ module Devise
     def update_params
       params.require(:user_passkey).permit(:name)
     end
+
+    def now
+      Time.zone.now
+    end
   end
 end

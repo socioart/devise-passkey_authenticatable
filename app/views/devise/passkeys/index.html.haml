@@ -1,5 +1,5 @@
-= pagehook "devise/passkeys/index", {options: @public_key_credential_creation_options.as_json}
-= pagehook "passkey_signals", {rpId: WebAuthn.configuration.rp_id, userId: current_user.passkey_user_id, allAcceptedCredentialIds: current_user.passkeys.pluck(:credential_id)}
+-# = pagehook "devise/passkeys/index", {options: @public_key_credential_creation_options.as_json}
+-# = pagehook "passkey_signals", {rpId: WebAuthn.configuration.rp_id, userId: current_user.passkey_user_id, allAcceptedCredentialIds: current_user.passkeys.pluck(:credential_id)}
 
 %h1 パスキー
 

@@ -1,8 +1,10 @@
 require "devise/passkey_authenticatable/version"
 require "devise/passkey_authenticatable/engine"
 
+require "devise"
 require "webauthn"
 require "useragent"
+require "open-uri"
 
 module Devise
   module PasskeyAuthenticatable
