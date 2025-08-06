@@ -3,12 +3,13 @@ require_relative "lib/devise/passkey_authenticatable/version"
 Gem::Specification.new do |spec|
   spec.name        = "devise-passkey_authenticatable"
   spec.version     = Devise::PasskeyAuthenticatable::VERSION
-  spec.authors     = [ "labocho" ]
-  spec.email       = [ "labocho@penguinlab.jp" ]
+  spec.authors     = ["labocho"]
+  spec.email       = ["labocho@penguinlab.jp"]
   spec.homepage    = "TODO"
   spec.summary     = "TODO: Summary of Devise::PasskeyAuthenticatable."
   spec.description = "TODO: Description of Devise::PasskeyAuthenticatable."
   spec.license     = "MIT"
+  spec.required_ruby_version = ">= 3.4.5"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -23,4 +24,5 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rails", ">= 8.0.2"
+  spec.metadata["rubygems_mfa_required"] = "true"
 end
