@@ -21,6 +21,13 @@ Or install it yourself as:
 $ gem install devise-passkey_authenticatable
 ```
 
+## Usage
+
+1. Create `config/initializers/webauthn.rb` (See: https://github.com/cedarcode/webauthn-ruby)
+2. Generate passkey model and migration by `bin/rails g devise:passkey_authenticatable:migration user`
+3. Add `:passkey_authenticatble` to your user model's `devise` method arguments
+4. Add JS to `devise/session/new` (authentication) and `devise/passkeys/index` (creation)
+
 ## Contributing
 Contribution directions go here.
 
