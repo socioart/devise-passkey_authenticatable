@@ -1,0 +1,5 @@
+class <%= name.camelize %>::Passkey < ApplicationRecord
+  include Devise::Models::PasskeyAuthenticatable::Passkey
+
+  belongs_to :<%= name %>
+end

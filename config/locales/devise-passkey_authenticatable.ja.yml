@@ -1,0 +1,8 @@
+ja:
+  devise:
+    passkeys:
+      create:
+        success: 'パスキーを登録しました。'
+        failure: 'パスキーの登録に失敗しました。'
+      destroy:
+        success: 'パスキーを削除しました。'

@@ -1,0 +1,28 @@
+= pagehook "devise/passkeys/index", {options: @public_key_credential_creation_options.as_json}
+= pagehook "passkey_signals", {rpId: WebAuthn.configuration.rp_id, userId: current_user.passkey_user_id, allAcceptedCredentialIds: current_user.passkeys.pluck(:credential_id)}
+
+%h1 パスキー
+
+%button.btn.btn-primary.mb-4{type: "button", id: "register-passkey"}
+  パスキーの登録
+
+= form_tag(user_passkeys_path, multipart: true, style: "display: none", id: "passkey_form") do |f|
+  = hidden_field_tag :credential_json
+
+- @passkeys.each do |passkey|
+  .card.mb-3
+    .card-body
+      %h5.card-title
+        %img{src: passkey.icon_light, style: "height: 1em; vertical-align: top;"}
+        = passkey.name
+      %p.card-text
+        %dl
+          %dt 作成:
+          %dd= passkey.created_at.strftime("%Y年%-m月%-d月 %H:%M:%S")
+          %dt 最後に使用:
+          %dd
+            = passkey.last_used_at.strftime("%Y年%-m月%-d月 %H:%M:%S")
+            = passkey.last_used_user_agent_text
+            = "(#{passkey.last_used_ip})"
+      = link_to "名前の編集", edit_user_passkey_path(passkey), class: "btn btn-warning"
+      = link_to "削除", user_passkey_path(passkey), method: :delete, data: {confirm: "このパスキーを削除しますか？"}, class: "btn btn-danger"

@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.summary     = "TODO: Summary of Devise::PasskeyAuthenticatable."
   spec.description = "TODO: Description of Devise::PasskeyAuthenticatable."
   spec.license     = "MIT"
-  spec.required_ruby_version = ">= 3.4.5"
+  spec.required_ruby_version = ">= 3.4"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -24,5 +24,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rails", ">= 8.0.2"
+  spec.add_dependency "useragent", ">= 0.16.11"
+  spec.add_dependency "webauthn", ">= 3.4.1"
   spec.metadata["rubygems_mfa_required"] = "true"
 end
