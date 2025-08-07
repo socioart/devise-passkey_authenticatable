@@ -4,7 +4,7 @@ require "rails/generators/active_record"
 module Devise
   module PasskeyAuthenticatable
     module Generators
-      class MigrationGenerator < Rails::Generators::NamedBase
+      class ModelGenerator < Rails::Generators::NamedBase
         include Rails::Generators::Migration
 
         # include Rails::Generators::ResourceHelpers
