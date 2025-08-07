@@ -92,7 +92,7 @@ RSpec.describe "Devise Sessions", type: :request do
 
         post user_session_path, params: params
 
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
         expect(response).to render_template("devise/sessions/new")
       end
     end
@@ -107,7 +107,7 @@ RSpec.describe "Devise Sessions", type: :request do
 
         post user_session_path, params: params
 
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
         expect(response).to render_template("devise/sessions/new")
       end
     end
@@ -119,7 +119,7 @@ RSpec.describe "Devise Sessions", type: :request do
 
       post user_session_path, params: params
 
-      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to have_http_status(:unprocessable_content)
       expect(response).to render_template("devise/sessions/new")
     end
 
@@ -130,7 +130,7 @@ RSpec.describe "Devise Sessions", type: :request do
 
       post user_session_path, params: params
 
-      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to have_http_status(:unprocessable_content)
       expect(response).to render_template("devise/sessions/new")
     end
   end

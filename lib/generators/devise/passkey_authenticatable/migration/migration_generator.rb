@@ -12,12 +12,12 @@ module Devise
         source_root File.expand_path("templates", __dir__)
         # hook_for :orm, required: true
 
-        def create_migration_file
-          migration_template "migration.rb.erb", "db/migrate/create_#{table_name.singularize}_passkeys_and_add_user_id_to_#{table_name}.rb"
-        end
-
         def create_model_file
           template "passkey_model.rb.erb", "app/models/#{name}/passkey.rb"
+        end
+
+        def create_migration_file
+          migration_template "migration.rb.erb", "db/migrate/create_#{table_name.singularize}_passkeys_and_add_passkey_user_id_to_#{table_name}.rb"
         end
 
         def self.next_migration_number(_dirname)
