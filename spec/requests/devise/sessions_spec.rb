@@ -125,7 +125,7 @@ RSpec.describe "Devise Sessions", type: :request do
 
     it "clientDataJSON に含まれる rp id が allowed_origins に含まれていなかったら失敗" do
       expect_any_instance_of(Devise::SessionsController).not_to receive(:sign_in)
-      expect(WebAuthn.configuration.relying_party).to receive(:id).twice.and_return("another.com")
+      expect(WebAuthn.configuration.relying_party).to receive(:id).and_return("another.com")
       expect(Devise::PasskeyAuthenticatable).to receive(:log_webauthn_error).with(an_instance_of(WebAuthn::RpIdVerificationError), any_args).and_call_original
 
       post user_session_path, params: params
