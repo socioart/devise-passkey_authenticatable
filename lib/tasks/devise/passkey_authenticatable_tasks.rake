@@ -5,5 +5,11 @@ namespace :devise do
       Devise::PasskeyAuthenticatable.update_aaguid_list
       puts "AAGUID list updated successfully."
     end
+
+
+    desc "Print JS for passkey authentication/creation"
+    task "js" do
+      puts File.read("#{__dir__}/example.ts");
+    end
   end
 end

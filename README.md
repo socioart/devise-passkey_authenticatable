@@ -24,7 +24,7 @@ $ gem install devise-passkey_authenticatable
 2. Generate passkey model and migration by `bin/rails g devise:passkey_authenticatable:migration user`
 3. Add `:passkey_authenticatble` to your user model's `devise` method arguments
 4. Add `controllers: {session: "devise/passkey_authenticatable/sessions"}` option to `devise_for` in `config/routes.rb`
-5. Add JS to `devise/session/new` (authentication) and `devise/passkeys/index` (creation)
+5. See JS examples by `bin/rails g devise:passkey_authenticatable:js`, and add to `devise/session/new` (authentication) and `devise/passkeys/index` (creation)
 
 ## Contributing
 Contribution directions go here.
