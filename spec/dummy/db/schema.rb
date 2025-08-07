@@ -24,7 +24,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_06_064012) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["credential_id"], name: "index_user_passkeys_on_credential_id", unique: true
-    t.index ["user_id", "credential_id"], name: "index_user_passkeys_on_user_id_and_credential_id", unique: true
+    t.index %w(user_id credential_id), name: "index_user_passkeys_on_user_id_and_credential_id", unique: true
     t.index ["user_id"], name: "index_user_passkeys_on_user_id"
   end
 

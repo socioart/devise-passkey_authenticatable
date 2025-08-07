@@ -1,6 +1,6 @@
 class CreateUserPasskeysAndAddPasskeyUserIdToUsers < ActiveRecord::Migration[8.0]
   def up
-    add_column :users, :passkey_user_id, :string #, after: :encrypted_password
+    add_column :users, :passkey_user_id, :string # , after: :encrypted_password
     execute("SELECT id FROM users WHERE passkey_user_id IS NULL").each do |record|
       id = record[0]
       passkey_user_id = WebAuthn.generate_user_id

@@ -15,8 +15,8 @@ gem "rubocop-rails-omakase", require: false
 
 group :development, :test do
   gem "debug"
+  gem "factory_bot_rails"
   gem "haml"
   gem "rails-controller-testing"
   gem "rspec-rails"
-  gem "factory_bot_rails"
 end

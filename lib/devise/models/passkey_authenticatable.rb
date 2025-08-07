@@ -29,7 +29,7 @@ module Devise
               last_used_ip: request.remote_ip,
               last_used_user_agent: request.user_agent,
             )
-            stored_credential.send(self.name.underscore)
+            stored_credential.send(name.underscore)
           rescue WebAuthn::Error => e
             Devise::PasskeyAuthenticatable.log_webauthn_error(e, request_response, passkey_challenge)
             nil
